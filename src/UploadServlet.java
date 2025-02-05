@@ -10,11 +10,14 @@ public class UploadServlet extends HttpServlet{
         PrintWriter out=resp.getWriter();
         RequestDispatcher rd;
         String fname=req.getParameter("fname");
-        Part file=req.getPart("photo");
+        String email=req.getParameter("email");
+        String website =req.getParameter("website");
+        String info=req.getParameter("data");
+        Part file=req.getPart("filename");
         String fileName=file.getSubmittedFileName();
-        out.println("file name -"+fileName);
+        //out.println("file name -"+fileName);
         String uploadFile="E:/tomcat8/webapps/OnlineJOB/Images/UpoladImages/"+fileName;
-        out.println(uploadFile);
+        //out.println(uploadFile);
 
         try{
             FileOutputStream fos=new FileOutputStream(uploadFile);
@@ -30,9 +33,12 @@ public class UploadServlet extends HttpServlet{
 
         try{
             Connection con=DBConnect.fetchConnection();
-            String query="insert into Upload(filename) values(?)";
+            String query="insert into AddData(filename,email,data,name) values(?,?,?,?)";
             PreparedStatement stmt=con.prepareStatement(query);
             stmt.setString(1,fileName);
+            stmt.setString(2,email);
+            stmt.setString(3,info);
+            stmt.setString(4,fname);
             int res=stmt.executeUpdate();
             if(res >0){
                 out.println("<script>alert('File uploaded Succesfully.');</script>");
