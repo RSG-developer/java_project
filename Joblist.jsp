@@ -1,0 +1,100 @@
+<%@ page import="java.sql.*" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Files</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+        
+
+        <div class="text-center text-success font-awesome">
+            <h2 class="mb-4 mt-1 py-4 ">Availables Jobs</h2>
+
+        </div>
+       
+        <div class="container mb-4">
+            <div class="row g-2">
+                <div class="col-md-10">
+                    <div class="input-group g-2 ">
+                        <input type="text" class="form-control me-2" placeholder="Keywords">
+                        <select class="form-select me-2">
+                            <option selected>Any Category</option>
+                            <option value="1">IT & Software</option>
+                            <option value="2">Marketing</option>
+                            <option value="3">Finance</option>
+                            <option value="4">Design</option>
+                        </select>
+                        <input type="text" class="form-control" placeholder="Location">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary w-100">
+                        <i class="fa fa-search"></i> SEARCH
+                    </button>
+                </div>
+            </div>
+        </div>
+                        
+        <div class="container mb-4">
+            <%
+            Connection con = null;
+            Statement stmt = null;
+            ResultSet rs = null;
+            String filename=null;
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/onlinejob", "root", "");
+                stmt = con.createStatement();
+                rs = stmt.executeQuery("SELECT *FROM addjob");
+
+                while (rs.next()) {
+                    filename = rs.getString("image");
+                    String email=rs.getString("email");
+                    String info1=rs.getString("decription");
+                    String date =rs.getString("date");
+                    String fileExtension = filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
+                    String name1=rs.getString("name");
+            %>
+            <div class="container mb-5">
+                <div class="card p-4 fs-4 shadow-lg">
+                    <div class="d-flex align-items-center">
+                        <img src="./Images/UpoladImages/<%=filename%>" alt="Company Logo" class="rounded-circle me-3" width="100">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-3 fs-2"><%=name1%></h5>
+                            <div class="text-muted big">
+                                <i class="bi bi-geo-alt"></i> <%=info1%> |
+                                <i class="bi bi-clock"></i> Full Time 
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <a class="btn btn-success fs-5" href="ApplyJob.jsp">Apply Now</a>
+                        </div>
+                    </div>
+                    <div class="mt-2 text-muted small">
+                        <i class="bi bi-calendar text-primary me-2 fs-3"></i> <span class="fw-bold">Date Line: </span> <%=date%>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+            <%
+                }
+            } catch (Exception e) {
+                out.println("Error: " + e.getMessage());
+            } 
+            %>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

@@ -9,10 +9,11 @@ public class UploadServlet extends HttpServlet{
         resp.setContentType("text/html");
         PrintWriter out=resp.getWriter();
         RequestDispatcher rd;
-        String fname=req.getParameter("fname");
-        String email=req.getParameter("email");
-        String website =req.getParameter("website");
-        String info=req.getParameter("data");
+        String cname=req.getParameter("fname");
+        String cemail=req.getParameter("email");
+        String cwebsite =req.getParameter("website");
+        String cdesc=req.getParameter("data");
+        String date=req.getParameter("date");
         Part file=req.getPart("filename");
         String fileName=file.getSubmittedFileName();
         //out.println("file name -"+fileName);
@@ -28,21 +29,24 @@ public class UploadServlet extends HttpServlet{
             fos.close();
         }
         catch(Exception e){
-            out.println("Error");
+            out.println(" "+ e.getMessage());
         }
 
         try{
             Connection con=DBConnect.fetchConnection();
-            String query="insert into AddData(filename,email,data,name) values(?,?,?,?)";
+            String query="insert into addjob(name,email,website,image, decription,date) values(?,?,?,?,?,?)";
             PreparedStatement stmt=con.prepareStatement(query);
-            stmt.setString(1,fileName);
-            stmt.setString(2,email);
-            stmt.setString(3,info);
-            stmt.setString(4,fname);
+            stmt.setString(1,cname);
+            stmt.setString(2,cemail);
+            stmt.setString(3,cwebsite);
+            stmt.setString(4,fileName);
+            stmt.setString(5,cdesc);
+            stmt.setString(6,date);
             int res=stmt.executeUpdate();
             if(res >0){
                 out.println("<script>alert('File uploaded Succesfully.');</script>");
-                rd=req.getRequestDispatcher("AddFile.jsp");
+                
+                rd=req.getRequestDispatcher("Home.jsp");
                 rd.include(req,resp);
             }
             else{

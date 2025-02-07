@@ -19,6 +19,10 @@
         <servlet-name>UploadServlet</servlet-name>
         <servlet-class>UploadServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ApplyServlet</servlet-name>
+        <servlet-class>ApplyServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/HelloServlet</url-pattern>
@@ -38,6 +42,10 @@
     <servlet-mapping>
         <servlet-name>UploadServlet</servlet-name>
         <url-pattern>/UploadServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApplyServlet</servlet-name>
+        <url-pattern>/ApplyServlet</url-pattern>
     </servlet-mapping>
 </web-app>
 

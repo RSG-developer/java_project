@@ -10,27 +10,30 @@
     
 </head>
 <body>
-    <div class="">
-        <h4 class="mb-4">Apply For The Job</h4>
-        <form action="UploadServlet" method="post" enctype="multipart/form-data">
-            <div class="row g-3">
+    <div class="text-center mt-5 text-success">
+        <h4 class="mb-4 fw-bold ">Add job details</h4>
+        <form action="UploadServlet" method="post" enctype="multipart/form-data" >
+            <div class="row g-3 px-5 py-5">
                 <div class="col-12 col-sm-6">
-                    <input type="text" class="form-control" placeholder="Your Name" name="fname">
+                    <input type="text" class="form-control" required placeholder="Company Name" name="fname">
                 </div>
                 <div class="col-12 col-sm-6">
-                    <input type="email" class="form-control" placeholder="Your Email" name="email">
+                    <input type="email" class="form-control" required placeholder="Company Email" name="email">
                 </div>
                 <div class="col-12 col-sm-6">
-                    <input type="text" class="form-control" placeholder="Portfolio Website" name="website">
+                    <input type="text" class="form-control" required placeholder="Comapny  Website" name="website" >
                 </div>
                 <div class="col-12 col-sm-6">
                     <input type="file" class="form-control bg-white" name="filename">
                 </div>
+                
+                <div class="col-12 col-sm-6">
+                    <input type="date" class="form-control" name="date" placeholder="date">                </div>
                 <div class="col-12">
-                    <textarea class="form-control" rows="5" placeholder="Coverletter" name="data"></textarea>
+                    <textarea class="form-control" rows="5" required placeholder="Description about Post" name="data"></textarea>
                 </div>
-                <div class="col-12">
-                    <button class="btn btn-primary w-100" type="submit">Apply Now</button>
+                <div class="col-3 mx-auto p-2">
+                    <button class="btn btn-success w-100" type="submit">Upload </button>
                 </div>
             </div>
         </form>

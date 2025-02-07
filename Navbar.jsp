@@ -36,10 +36,11 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Navbar with Login & Signup Modal</title>
+    <link rel="shortcut icon" href="./Images/logo.svg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         .hidden {
@@ -70,9 +71,21 @@ try {
                 <li class="nav-item">
                     <a class="nav-link text-primary" href="/">Contact</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link text-primary" href="/">Services</a>
+                </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-primary" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Services
+                    </a>
+                    <ul class="dropdown-menu fs-4 rounded" aria-labelledby="servicesDropdown">
+                        <li><a class="dropdown-item   text-primary" href="AddJob.jsp">AddJOB</a></li>
+                        <li><a class="dropdown-item   text-primary" href="Joblist.jsp">View Jobs</a></li>
+                        <li><a class="dropdown-item   text-primary" href="ApplyJob.jsp">Apply for job</a></li>
+                        <li><a class="dropdown-item   text-primary" href="Candidates.jsp">Candidates</a></li>
+                    </ul>
                 </li>
+                
                 <li class="nav-item">
                     <a class="nav-link " href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal" id="username"><i class="fa-solid fa-user"></i> <%=name %></a>
                   </li>
@@ -105,6 +118,7 @@ try {
     </div>
   </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Correct Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-2R0iQxn0xNl6FJq5aPBK3PDQxvlZZCozNteYztU8rhlw5osQIqJjDqAxCm1jZ5pB" crossorigin="anonymous"></script>
 </body>
 </html>
