@@ -23,6 +23,10 @@
         <servlet-name>ApplyServlet</servlet-name>
         <servlet-class>ApplyServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>SearchServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/HelloServlet</url-pattern>
@@ -46,6 +50,10 @@
     <servlet-mapping>
         <servlet-name>ApplyServlet</servlet-name>
         <url-pattern>/ApplyServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/SearchServlet</url-pattern>
     </servlet-mapping>
 </web-app>
 

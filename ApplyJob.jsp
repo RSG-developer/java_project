@@ -40,6 +40,9 @@
                     <input type="text" class="form-control" name="location" id="" placeholder="location">
                 </div>
                 <div class="col-12 col-sm-6">
+                    <input type="text" class="form-control" name="phone" id="" placeholder="phone number">
+                </div>
+                <div class="col-12 col-sm-6">
                     <input type="text" class="form-control" name="skill" id="" placeholder="Skills">
                 </div>
                 <div class="col-12 text-black fw-bold" >

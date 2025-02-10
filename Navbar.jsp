@@ -36,9 +36,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Navbar with Login & Signup Modal</title>
-    <link rel="shortcut icon" href="./Images/logo.svg" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -47,19 +45,18 @@ try {
             display: none;
         }
     </style>
+     
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-lg">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#">
             <img src="./Images/logo.svg" alt="Cariera" style="height: 30px;">
            
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+       
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
@@ -69,7 +66,7 @@ try {
                     <a class="nav-link text-primary" href="About.jsp">About US</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-primary" href="/">Contact</a>
+                    <a class="nav-link text-primary" href="#">Contact</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link text-primary" href="/">Services</a>
@@ -97,28 +94,10 @@ try {
     </div>
 </nav>
 
-   <!-- Modal -->
-   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header  bg-primary text-white text-center">
-          <h1 class="modal-title fs-5 "  id="exampleModalLabel">Profile</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-center">
-            <img src="./Images/profile.jpg" alt="" ><br>
-            <%=name%>
-            
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Edit</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  
 <!-- Correct Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-2R0iQxn0xNl6FJq5aPBK3PDQxvlZZCozNteYztU8rhlw5osQIqJjDqAxCm1jZ5pB" crossorigin="anonymous"></script>
+
+
 </body>
 </html>

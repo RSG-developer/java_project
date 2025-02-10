@@ -15,6 +15,7 @@ public class ApplyServlet extends HttpServlet{
         String location=req.getParameter("location");
         String skill=req.getParameter("skill");
         String exper=req.getParameter("exper");
+        String phone=req.getParameter("phone");
         
         //out.println(" "+c_name+" email= "+c_email+" qualif= "+qualification+" location= "+location+" skill= "+skill+"exep= "+exper);
         //For photo
@@ -52,7 +53,7 @@ public class ApplyServlet extends HttpServlet{
 
         try{
             Connection con=DBConnect.fetchConnection();
-            String query="insert into applyjob(name,email,qualification,location, photo,resume,experience,skill) values(?,?,?,?,?,?,?,?)";
+            String query="insert into applyjob(name,email,qualification,location, photo,resume,experience,skill,phone) values(?,?,?,?,?,?,?,?,?)";
             PreparedStatement stmt=con.prepareStatement(query);
             stmt.setString(1,c_name);
             stmt.setString(2,c_email);
@@ -62,6 +63,7 @@ public class ApplyServlet extends HttpServlet{
             stmt.setString(6,resumename);
             stmt.setString(7,exper);
             stmt.setString(8,skill);
+            stmt.setString(9,phone);
             int res=stmt.executeUpdate();
             if(res >0){
                 out.println("<script>alert('File uploaded Succesfully.');</script>");
