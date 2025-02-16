@@ -7,7 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    
+    <style>
+        input::placeholder{
+            font-size: larger;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     <div class="text-center mt-5 text-success">
@@ -28,7 +34,15 @@
                 </div>
                 
                 <div class="col-12 col-sm-6">
-                    <input type="date" class="form-control" name="date" placeholder="date">                </div>
+                    <input type="date" class="form-control" name="date" placeholder="date">                
+                </div>
+                
+                <div class="col-12 col-sm-6">
+                    <input type="text" class="form-control" name="post" placeholder="Required for post">                
+                </div>
+                <div class="col-12 col-sm-6">
+                    <input type="text" class="form-control" name="type" placeholder="Full Time/Inter/Part Time ">                
+                </div>
                 <div class="col-12">
                     <textarea class="form-control" rows="5" required placeholder="Description about Post" name="data"></textarea>
                 </div>

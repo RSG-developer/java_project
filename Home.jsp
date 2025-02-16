@@ -81,38 +81,25 @@
             <!-- ===== End of Swiper Slider ===== -->
         </section>
         
-        <section>
+        <section >
             
             <div class="container-xxl py-5">
                 <div class="container">
                     <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">JOB Listing</h1>
-                </div>
-                <div class="container mb-4">
-                    <div class="card p-5 fs-4 shadow-sm">
-                        <div class="d-flex align-items-center">
-                            <img src="./Images/img/com-logo-1.jpg" alt="Company Logo" class="rounded-circle me-3" width="100">
-                            <div class="flex-grow-1">
-                                <h5 class="mb-3 fs-2">Software Engineer</h5>
-                                <div class="text-muted big">
-                                    <i class="bi bi-geo-alt"></i> New York, USA |
-                                    <i class="bi bi-clock"></i> Full Time 
-                                    
-                                </div>
-                            </div>
-                            <div>
-                                <a class="btn btn-success fs-5" href="AddJob.jsp">Apply Now</a>
-                            </div>
-                        </div>
-                        <div class="mt-2 text-muted small">
-                            <i class="bi bi-calendar text-primary me-2 fs-3"></i> <span class="fw-bold">Date Line: </span> 01 Jan, 2045
-                        </div>
+                    <div  class="wow fadeInUp" data-wow-delay="0.3s">
+                        <%@include file="Joblist.jsp" %>
                     </div>
                 </div>
             </div>
-            <%@include file="Joblist.jsp" %>
+            
         </section>
-       
         
+        
+
+        <section>
+            <%@ include file="Footer.html"%>
+        </section>
+
         <script src="js/jquery-3.1.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/bootstrap-select.min.js"></script>

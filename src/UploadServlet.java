@@ -14,6 +14,8 @@ public class UploadServlet extends HttpServlet{
         String cwebsite =req.getParameter("website");
         String cdesc=req.getParameter("data");
         String date=req.getParameter("date");
+        String post=req.getParameter("post");
+        String type=req.getParameter("type");
         Part file=req.getPart("filename");
         String fileName=file.getSubmittedFileName();
         //out.println("file name -"+fileName);
@@ -34,7 +36,7 @@ public class UploadServlet extends HttpServlet{
 
         try{
             Connection con=DBConnect.fetchConnection();
-            String query="insert into addjob(name,email,website,image, decription,date) values(?,?,?,?,?,?)";
+            String query="insert into addjob(name,email,website,image, decription,date,post,type) values(?,?,?,?,?,?,?,?)";
             PreparedStatement stmt=con.prepareStatement(query);
             stmt.setString(1,cname);
             stmt.setString(2,cemail);
@@ -42,6 +44,8 @@ public class UploadServlet extends HttpServlet{
             stmt.setString(4,fileName);
             stmt.setString(5,cdesc);
             stmt.setString(6,date);
+            stmt.setString(7,post);
+            stmt.setString(8,type);
             int res=stmt.executeUpdate();
             if(res >0){
                 out.println("<script>alert('File uploaded Succesfully.');</script>");
@@ -55,7 +59,7 @@ public class UploadServlet extends HttpServlet{
              
             
         }catch(Exception e ){
-            out.println("Error");
+            out.println("Error"+e.getMessage());
         }
        
    }

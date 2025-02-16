@@ -80,7 +80,7 @@
                                 </div>
                             </div>
                             <div class="me-2">
-                                <a class="btn btn-primary fs-5 " href="CandidateDetails.jsp?id=<%=rs.getInt(1)%>">Hire</a>
+                                <a class="btn btn-primary fs-5 " href="CandidateDetails.jsp?name=<%=name1%>">Details</a>
                             </div>
                             <div>
                                 <a class="btn btn-success fs-5 " href="./Images/UpoladImages/<%=resume%>">Resume</a>
@@ -128,7 +128,7 @@
                         </div>
                     </div>
                     <div class="me-2">
-                        <a class="btn btn-success fs-5 " href="">Hire</a>
+                        <a class="btn btn-primary fs-5 " href="CandidateDetails.jsp?name=<%=candidate[0]%>">Details</a>
                     </div>
                     <div>
                         <a class="btn btn-success fs-5 " href="./Images/UpoladImages/<%=candidate[5]%>">Resume</a>

@@ -18,7 +18,7 @@
 
         </div>
        
-        <div class="container mb-4">
+        <!-- <div class="container mb-4">
             <div class="row g-2">
                 <div class="col-md-10">
                     <div class="input-group g-2 ">
@@ -39,7 +39,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> -->
                         
         <div class="container mb-4">
             <%
@@ -56,10 +56,11 @@
                 while (rs.next()) {
                     filename = rs.getString("image");
                     String email=rs.getString("email");
-                    String info1=rs.getString("decription");
+                    String post=rs.getString("post");
                     String date =rs.getString("date");
                     String fileExtension = filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
                     String name1=rs.getString("name");
+                    String type=rs.getString("Type");
             %>
             <div class="container mb-5">
                 <div class="card p-4 fs-4 shadow-lg">
@@ -68,10 +69,12 @@
                         <div class="flex-grow-1">
                             <h5 class="mb-3 fs-2"><%=name1%></h5>
                             <div class="text-muted big">
-                                <i class="bi bi-geo-alt"></i> <%=info1%> |
-                                <i class="bi bi-clock"></i> Full Time 
+                                <i class="bi bi-geo-alt"></i> <%=post%> | <i class="bi bi-clock"></i><%=type%>
                                 
                             </div>
+                        </div>
+                        <div>
+                            <a class="btn btn-primary fs-5 me-2" href="JobDetails.jsp?id=<%=rs.getInt(1)%>">View</a>
                         </div>
                         <div>
                             <a class="btn btn-success fs-5" href="ApplyJob.jsp">Apply Now</a>
@@ -93,8 +96,11 @@
         </div>
     </div>
 
+        
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <script>new WOW().init();</script>
 </body>
 </html>

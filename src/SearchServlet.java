@@ -27,6 +27,7 @@ public class SearchServlet extends HttpServlet {
                 String skill=rs.getString("skill");
                 String photo=rs.getString("photo");
                 String resume=rs.getString("resume");
+                
                 candidateList.add(new String[]{name,email,exper,skill,photo,resume});
             }
 
