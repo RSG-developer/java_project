@@ -7,12 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cariera | Online job Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+   
    
 </head>
 <body>
@@ -52,7 +47,7 @@
                 <!-- Start of Profile Picture -->
                 <div class="col-md-3 col-xs-12">
                     <div class="profile-photo ">
-                        <img src="Images/UpoladImages/<%=photo%>" class="img-responsive" alt="">
+                        <img src="Images/UpoladImages/<%=photo%>" class="img-thumbnail" alt="">
                     </div>
 
                 </div>

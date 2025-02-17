@@ -87,7 +87,7 @@
                 <div class="container">
                     <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">JOB Listing</h1>
                     <div  class="wow fadeInUp" data-wow-delay="0.3s">
-                        <%@include file="Joblist.jsp" %>
+                        <jsp:include page="Joblist.jsp" />
                     </div>
                 </div>
             </div>
@@ -117,6 +117,10 @@
         <script src="js/custom.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script>new WOW().init();</script>
+        <script>
+            var ele=document.getElementById("nav2");
+            ele.style.display='none';
+        </script>
 
 </body>
 

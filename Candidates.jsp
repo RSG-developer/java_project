@@ -12,12 +12,26 @@
 <body>
     
         <%@ include file="Navbar.jsp"%>
+        <%
+            String userRole=(String)session.getAttribute("role");
+            //out.println(userRole);
+            if (userRole==null || !userRole.equals("Company")){
+                //out.println("<h1> Access not allowed to Candidates</h1>");
+        %>
+        
+        <div class="alert alert-warning text-center" role="alert">
+           Access not allowed to other Candidates
+          </div>
+        
+        <%        
+            }
+            else {
+        %>  
 
         <div class="text-center text-success font-awesome ">
             <h2 class="mb-4 mt-1 py-4 ">List Of Candidates</h2>
 
-        </div>
-          
+        </div>       
         <div class="container mb-4 me-3">
            
             <form action="SearchServlet" method="post">
@@ -97,6 +111,7 @@
                 } catch (Exception e) {
                     out.println("Error: " + e.getMessage());
                 } 
+            }
                 %>
             </div>
         </div>

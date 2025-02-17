@@ -10,36 +10,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    
-        
+    <div id="nav2">
+        <%@ include file="Navbar.jsp" %>
 
+    </div>
+    <%
+        String userRole=(String)session.getAttribute("role");
+        //out.println(userRole);
+        if (userRole==null || userRole.equals("Company")){
+        %>
+        
+        <div class="alert alert-warning text-center" role="alert">
+            Access not allowed to other Companies
+           </div>
+          
+        <%
+           
+        }
+        else {
+        %>  
         <div class="text-center text-success font-awesome">
             <h2 class="mb-4 mt-1 py-4 ">Availables Jobs</h2>
 
         </div>
-       
-        <!-- <div class="container mb-4">
-            <div class="row g-2">
-                <div class="col-md-10">
-                    <div class="input-group g-2 ">
-                        <input type="text" class="form-control me-2" placeholder="Keywords">
-                        <select class="form-select me-2">
-                            <option selected>Any Category</option>
-                            <option value="1">IT & Software</option>
-                            <option value="2">Marketing</option>
-                            <option value="3">Finance</option>
-                            <option value="4">Design</option>
-                        </select>
-                        <input type="text" class="form-control" placeholder="Location">
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-primary w-100">
-                        <i class="fa fa-search"></i> SEARCH
-                    </button>
-                </div>
-            </div>
-        </div> -->
                         
         <div class="container mb-4">
             <%
@@ -92,9 +85,10 @@
             } catch (Exception e) {
                 out.println("Error: " + e.getMessage());
             } 
+        }
             %>
         </div>
-    </div>
+    
 
         
     <!-- Bootstrap JS -->

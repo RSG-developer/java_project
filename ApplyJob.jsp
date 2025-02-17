@@ -16,6 +16,7 @@
     </style>
 </head>
 <body>
+    <%@ include file="Navbar.jsp" %>
     <div class="text-center mt-4 text-success">
         <h4 class="fw-bold ">Apply for jobs</h4>
 

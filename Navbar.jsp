@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.io.*,java.sql.*,javax.servlet.*,javax.servlet.http.*" %>
 <%
-String name=null;
+String username=null;
 try {
     if (session == null || session.getAttribute("currentuser") == null) {
         response.sendRedirect("Home1.html");
@@ -16,7 +16,7 @@ try {
             stmt.setInt(1, u_id);
             rs = stmt.executeQuery();
             if (rs.next()) {
-                name = rs.getString("name").toString();
+                username = rs.getString("name").toString();
             }
         } catch(ClassNotFoundException cse){
           cse.printStackTrace();
@@ -39,7 +39,7 @@ try {
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link rel="stylesheet" href="./css/style.css">
     <style>
         .hidden {
             display: none;
@@ -84,7 +84,7 @@ try {
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link " href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal" id="username"><i class="fa-solid fa-user"></i> <%=name %></a>
+                    <a class="nav-link " href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal" id="username"><i class="fa-solid fa-user"></i> <%=username %></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="LogoutServlet"><i class="fa-solid fa-arrow-right-from-bracket"></i>    Logout</a>

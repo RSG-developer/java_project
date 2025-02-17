@@ -16,6 +16,7 @@
     </style>
 </head>
 <body>
+    <%@ include file="Navbar.jsp" %>
     <div class="text-center mt-5 text-success">
         <h4 class="mb-4 fw-bold ">Add job details</h4>
         <form action="UploadServlet" method="post" enctype="multipart/form-data" >

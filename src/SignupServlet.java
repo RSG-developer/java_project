@@ -9,7 +9,7 @@ public class SignupServlet extends HttpServlet{
         String name=req.getParameter("username");
         String email=req.getParameter("email");
         String password=req.getParameter("Password");
-
+        String role =req.getParameter("role");
         String hashedPassword =PasswordHashing.hashPassword(password);
 
         Connection con;
@@ -19,13 +19,13 @@ public class SignupServlet extends HttpServlet{
             con=DBConnect.fetchConnection();
             stmt=con.createStatement();
            
-            String query="insert into users(name,email,password) values('"+name+"','"+email+"','"+hashedPassword+"'); " ;
+            String query="insert into users(name,email,password,role) values('"+name+"','"+email+"','"+hashedPassword+"','"+role+"'); " ;
             stmt.executeUpdate(query);
             out.print("<script>alert('Register Successfully Completed.');</script>");
             rd=req.getRequestDispatcher("Home1.html");
             rd.include(req,resp);
         }   catch(Exception e){
-            out.println(e);
+            out.println("Error "+e.getMessage());
         }
     }
 }

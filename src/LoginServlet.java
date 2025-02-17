@@ -28,19 +28,26 @@ public class LoginServlet extends HttpServlet{
             stmt=con.createStatement();
             // rs=stmt.executeQuery("select * from users where uname='"+usr+"' and pname='"+pwd+"'");
             
-           rs=stmt.executeQuery("select user_id from users where email='"+usr+"' and password='"+pwd1+"'");
+           rs=stmt.executeQuery("select * from users where email='"+usr+"' and password='"+pwd1+"'");
             
             if (rs.next()) {
+                String role =rs.getString("role");
                 int userId = rs.getInt("user_id");
                 HttpSession session = req.getSession();
                 session.setAttribute("currentuser", userId);
-                res.sendRedirect("Home.jsp");
+                session.setAttribute("role",role);
+                
+                if(role.equals("candidate")){
+                    res.sendRedirect("Home.jsp");
+
+                }
+                else if(role.equals("Company")){
+                    res.sendRedirect("Home.jsp");
+                }
                
             }
             else{
-                out.print("<script>Login Failed .</script>");
-                rd=req.getRequestDispatcher("Home1.html");
-                rd.include(req,res);
+               res.sendRedirect("Home1.html?error=1");
             }
 
         }catch(Exception e){

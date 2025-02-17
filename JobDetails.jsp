@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
    
 </head>
