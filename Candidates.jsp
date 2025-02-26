@@ -10,8 +10,10 @@
     
 </head>
 <body>
-    
-        <%@ include file="Navbar.jsp"%>
+        <div id="nav3">
+            <%@ include file="Navbar.jsp"%>
+
+        </div>
         <%
             String userRole=(String)session.getAttribute("role");
             //out.println(userRole);
@@ -34,7 +36,7 @@
         </div>       
         <div class="container mb-4 me-3">
            
-            <form action="SearchServlet" method="post">
+            <form action="SearchServlet" method="post" id="search">
             <div class="row g-2">
                 <div class="col-md-2">
                     

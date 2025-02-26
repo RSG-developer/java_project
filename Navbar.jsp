@@ -84,7 +84,7 @@ try {
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link " href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal" id="username"><i class="fa-solid fa-user"></i> <%=username %></a>
+                    <a class="nav-link " href=""  id="username"><i class="fa-solid fa-user"></i> <%=username %></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="LogoutServlet"><i class="fa-solid fa-arrow-right-from-bracket"></i>    Logout</a>

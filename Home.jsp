@@ -12,7 +12,14 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
 </head>
-
+ <style>
+    #nav3{
+        display: none;
+    }
+    #search{
+        display: none;
+    }
+ </style>
 <body>
 
     <%@include file="Navbar.jsp" %>
@@ -80,12 +87,15 @@
             </div>
             <!-- ===== End of Swiper Slider ===== -->
         </section>
+        <% String role=(String)session.getAttribute("role");
         
+        if(!role.equals("Company")){
+        %>
         <section >
             
             <div class="container-xxl py-5">
                 <div class="container">
-                    <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">JOB Listing</h1>
+                    <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s"></h1>
                     <div  class="wow fadeInUp" data-wow-delay="0.3s">
                         <jsp:include page="Joblist.jsp" />
                     </div>
@@ -93,8 +103,23 @@
             </div>
             
         </section>
-        
-        
+        <%
+            }
+            else if(!role.equals("company")){
+        %>
+        <section >
+            
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s"></h1>
+                    <div  class="wow fadeInUp" data-wow-delay="0.3s">
+                        <jsp:include page="Candidates.jsp" />
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <% }%>
 
         <section>
             <%@ include file="Footer.html"%>
@@ -120,6 +145,8 @@
         <script>
             var ele=document.getElementById("nav2");
             ele.style.display='none';
+
+            
         </script>
 
 </body>

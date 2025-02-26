@@ -46,7 +46,7 @@
 
                 <!-- Start of Profile Picture -->
                 <div class="col-md-3 col-xs-12">
-                    <div class="profile-photo ">
+                    <div class="profile-photo mt-4 ">
                         <img src="Images/UpoladImages/<%=photo%>" class="img-thumbnail" alt="">
                     </div>
 
