@@ -66,7 +66,7 @@ try {
                     <a class="nav-link text-primary" href="About.jsp">About US</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-primary" href="#">Contact</a>
+                    <a class="nav-link text-primary" href="Contact.jsp">Contact</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link text-primary" href="/">Services</a>
