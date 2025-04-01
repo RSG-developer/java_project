@@ -349,7 +349,7 @@
                         if (alertBox) {
                             alertBox.style.display = "none";
                         }
-                    }, 3000);
+                    }, 5000);
                 </script>        
                 </div>
                 <div>
@@ -538,7 +538,4 @@
     
 
 </body>
-
-
-<!-- Mirrored from coderthemes.com/adminox/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 30 Jan 2025 07:15:39 GMT -->
 </html>
