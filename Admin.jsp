@@ -26,7 +26,7 @@
     <meta content="Coderthemes" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="./Images/logo-white.svg">
+    <link rel="shortcut icon" href="./Images/logo.svg" hidden>
 
         
     <!-- Vendor css -->
@@ -40,6 +40,8 @@
 
     <!-- Theme Config Js -->
     <script src="assets/js/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     
 </head>
 
@@ -343,7 +345,7 @@
                     %>
                 
                 <script>
-                    // Auto-dismiss alert after 3 seconds
+                    
                     setTimeout(function() {
                         let alertBox = document.getElementById("alertBox");
                         if (alertBox) {
@@ -442,7 +444,7 @@
                                                 String post=rs.getString("post");
                                         %>
                                         <tbody>
-                                            <tr>
+                                            <tr id="row_<%=rs.getInt(1)%>">
                                                 <td>
                                                     <img src="./Images/UpoladImages/<%=photo%>" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
                                                 </td>
@@ -468,7 +470,7 @@
 
                                                 <td>
                                                     <a href="#" class="table-action-btn"><i class="mdi mdi-pencil"></i></a>
-                                                    <a href="#" class="table-action-btn"><i class="mdi mdi-close"></i></a>
+                                                    <a href="javascript:deleteRecord(<%= rs.getInt(1) %>)"  class="table-action-btn"><i class="mdi mdi-close"></i></a>
                                                 </td>
                                             </tr>
 
@@ -493,7 +495,44 @@
                 <%
                     }
                     else{
-                        out.println("\n");
+                        out.println("\n"); %>
+                        <div style="display: flex;flex-wrap: wrap;gap:300px ;">
+                        <div id="dashboard" style="height: 500px;max-width: 450px;">
+                            <canvas id="dashboardChart"></canvas>
+                        </div>
+                        <div id="dasboard1" style="height: 500px;max-width: 450px;">
+                            <canvas id="doughnutchart"></canvas>
+                        </div>
+                        </div>
+                        <script>
+                        var ctx = document.getElementById('dashboardChart').getContext('2d');
+                        var ctx1 = document.getElementById('doughnutchart').getContext('2d');
+                        var myChart = new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                        datasets: [{
+                        label: 'Students Registered',
+                        data: [12, 19, 3, 5, 2],
+                        backgroundColor: ['blue','red','green','cyan','orange']
+                        }]
+                     }
+                    });
+                        var myChart = new Chart(ctx1, {
+                        type: 'doughnut',
+                        data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                        datasets: [{
+                        label: 'Students Registered',
+                        data: [12, 19, 3, 5, 2],
+                        backgroundColor: ['blue','red','green','cyan','orange']
+                        }]
+                     }
+                    });
+
+                    
+                </script>
+                    <%    
                     }
                 %>        
             </div> <!-- container -->
@@ -531,7 +570,27 @@
     <!--C3 Chart-->
     <script src="assets/vendor/d3/d3.min.js"></script>
     <script src="assets/vendor/c3/c3.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function deleteRecord(id) {
+            if (confirm("Are you sure you want to delete this record?")) {
+                $.ajax({
+                    url: 'DeleteServlet',
+                    type: 'POST',
+                    data: { studentId: id },
+                    success: function(response) {
+                        if (response.trim() === "success") {
+                            $("#row_" + id).remove();
+                            alert("Record deleted successfully");
+                        } else {
+                            alert("Failed to delete record!");
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+  
 
     
 
