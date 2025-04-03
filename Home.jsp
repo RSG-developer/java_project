@@ -32,7 +32,7 @@
 
                     <!-- Start of Slide 1 -->
                     <div class="swiper-slide overlay-black"
-                        style="background: url('Images/slider-img-1.jpg'); background-size: cover; background-position: 40% 40%;">
+                        style="background: url('Images/slider_1.jpg'); background-size: cover; background-position: 40% 40%;">
 
                         <!-- Start of Slider Content -->
                         <div class="slider-content container">
@@ -112,7 +112,7 @@
 
                         <!-- Category Description -->
                         <div class="category-descr">
-                            <span>Lorem Ipsum is simply dummy text of the printing industry. Lorem has been the standard dummy text since 1500s.</span>
+                            <span> Accountant to manage financial records, analyze financial data, and ensure compliance with tax regulations. </span>
                         </div>
 
                     </div>
@@ -136,7 +136,7 @@
 
                         <!-- Category Description -->
                         <div class="category-descr">
-                            <span>Lorem Ipsum is simply dummy text of the printing industry. Lorem has been the standard dummy text since 1500s.</span>
+                            <span> Banking Officer to manage daily banking operations, assist customers with financial transactions, and ensure compliance with banking regulations</span>
                         </div>
 
                     </div>
@@ -160,7 +160,7 @@
 
                         <!-- Category Description -->
                         <div class="category-descr">
-                            <span>Lorem Ipsum is simply dummy text of the printing industry. Lorem has been the standard dummy text since 1500s.</span>
+                            <span>Graphic Designer / Visual Artist to develop stunning visuals for digital and print media. </span>
                         </div>
 
                     </div>
@@ -184,7 +184,7 @@
 
                         <!-- Category Description -->
                         <div class="category-descr">
-                            <span>Lorem Ipsum is simply dummy text of the printing industry. Lorem has been the standard dummy text since 1500s.</span>
+                            <span> Insurance Advisor to assist clients in choosing the best insurance policies based on their needs.</span>
                         </div>
 
                     </div>
@@ -210,7 +210,32 @@
 
                         <!-- Category Description -->
                         <div class="category-descr">
-                            <span>Lorem Ipsum is simply dummy text of the printing industry. Lorem has been the standard dummy text since 1500s.</span>
+                            <span> IT Engineer to design, implement, and maintain IT infrastructure and systems. The ideal candidate will have strong technical expertise, problem-solving abilities, and experience in networking, cloud computing, or cybersecurity.</span>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- End of Category div -->
+
+                <!-- Start of Category div -->
+                <div class="col-md-3 col-sm-6 col-xs-12 cat-wrapper">
+                    <div class="category ptb30">
+
+                        <!-- Icon -->
+                        <div class="category-icon">
+                            <i class="fa fa-heart"></i>
+
+                        </div>
+
+                        <!-- Category Info - Title -->
+                        <div class="category-info pt30">
+                            <a href="#">healthcare</a>
+                            <p>(14 open positions)</p>
+                        </div>
+
+                        <!-- Category Description -->
+                        <div class="category-descr">
+                            <span>Healthcare Professional to provide high-quality medical care to patients. </span>
                         </div>
 
                     </div>
@@ -228,37 +253,13 @@
 
                         <!-- Category Info - Title -->
                         <div class="category-info pt30">
-                            <a href="#">healthcare</a>
-                            <p>(14 open positions)</p>
-                        </div>
-
-                        <!-- Category Description -->
-                        <div class="category-descr">
-                            <span>Lorem Ipsum is simply dummy text of the printing industry. Lorem has been the standard dummy text since 1500s.</span>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- End of Category div -->
-
-                <!-- Start of Category div -->
-                <div class="col-md-3 col-sm-6 col-xs-12 cat-wrapper">
-                    <div class="category ptb30">
-
-                        <!-- Icon -->
-                        <div class="category-icon">
-                            <i class="fa fa-heart"></i>
-                        </div>
-
-                        <!-- Category Info - Title -->
-                        <div class="category-info pt30">
                             <a href="#">marketing</a>
                             <p>(7 open positions)</p>
                         </div>
 
                         <!-- Category Description -->
                         <div class="category-descr">
-                            <span>Lorem Ipsum is simply dummy text of the printing industry. Lorem has been the standard dummy text since 1500s.</span>
+                            <span> Marketing Professional to develop and implement effective marketing strategies.</span>
                         </div>
 
                     </div>
@@ -282,7 +283,7 @@
 
                         <!-- Category Description -->
                         <div class="category-descr">
-                            <span>Lorem Ipsum is simply dummy text of the printing industry. Lorem has been the standard dummy text since 1500s.</span>
+                            <span>Management Professional to oversee business operations, optimize processes, and drive organizational success.</span>
                         </div>
 
                     </div>

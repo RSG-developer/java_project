@@ -405,10 +405,13 @@
                                 <p class="card-subtitle">
                                     List Of recently added Companies
                                 </p>
+                                <div>
+                                    <button type="button" id="downloadBtn" class="btn btn-primary">Download</button>
+                                </div>
                             </div>
                             <div class="card-body pt-2">
                                 <div class="table-responsive">
-                                    <table class="table table-hover m-0 table-actions-bar">
+                                    <table class="table table-hover m-0 table-actions-bar" id="myTable">
 
                                         <thead>
                                             <tr>
@@ -567,9 +570,6 @@
     <!-- App js -->
     <script src="assets/js/app.js"></script>
 
-    <!--C3 Chart-->
-    <script src="assets/vendor/d3/d3.min.js"></script>
-    <script src="assets/vendor/c3/c3.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function deleteRecord(id) {
@@ -591,6 +591,43 @@
         }
     </script>
   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
+  <script>
+    document.getElementById("downloadBtn").addEventListener("click", function () {
+        const { jsPDF } = window.jspdf;
+        let doc = new jsPDF();
+
+        let table = document.getElementById("myTable");
+        let data = [];
+        let headers = [];
+
+        // Get table headers
+        table.querySelectorAll("tr").forEach((row, index) => {
+            let rowData = [];
+            row.querySelectorAll("th, td").forEach(cell => {
+                rowData.push(cell.innerText);
+            });
+
+            if (index === 0) {
+                headers = rowData; // First row as headers
+            } else {
+                data.push(rowData); // Remaining rows as data
+            }
+        });
+
+        // Add table to PDF
+        doc.autoTable({
+            head: [headers],
+            body: data
+        });
+
+        // Save the PDF
+        doc.save("Report.pdf");
+    });
+</script>
+
 
     
 
