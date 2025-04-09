@@ -17,7 +17,6 @@
 <html lang="en">
 
 
-<!-- Mirrored from coderthemes.com/adminox/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 30 Jan 2025 07:14:11 GMT -->
 <head>
     <meta charset="utf-8" />
     <title>Admin Panel</title>
@@ -38,7 +37,7 @@
     <!-- Icons css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- Theme Config Js -->
+    
     <script src="assets/js/config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -172,22 +171,15 @@
                                 </a>
 
                                 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">
+                                
+                                <!-- <a href="javascript:void(0);" class="dropdown-item">
                                     <i class="mdi mdi-cog-outline me-1 font-17 align-middle"></i>
                                     <span class="align-middle">Settings</span>
-                                </a>
+                                </a> -->
 
                                 
 
                                 <div class="dropdown-divider"></div>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">
-                                    <i class="mdi mdi-lock-outline me-1 font-17 align-middle"></i>
-                                    <span class="align-middle">Lock Screen</span>
-                                </a>
-
                                 <!-- item-->
                                 <a href="LogoutServlet" class="dropdown-item active fw-semibold text-danger">
                                     <i class="mdi mdi-logout me-1 font-17 align-middle"></i>
@@ -237,7 +229,7 @@
                             <div class="card-header">
                                 <h4 class="header-title">Recent Candidates</h4>
                                 <p class="card-subtitle">
-                                    Your awesome text goes here.
+                                   List Recent Candidates
                                 </p>
                             </div>
                             <div class="card-body pt-2">
@@ -400,13 +392,15 @@
                 <div class="row">
                     <div class="col-xl-6 col-lg-12">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header" style="display: flex;gap: 500px;" >
+                                <div>
                                 <h4 class="header-title">Recent Companies</h4>
                                 <p class="card-subtitle">
                                     List Of recently added Companies
                                 </p>
+                                </div>
                                 <div>
-                                    <button type="button" id="downloadBtn" class="btn btn-primary">Download</button>
+                                    <button type="button" id="downloadBtn" class="btn btn-success">Genearte report</button>
                                 </div>
                             </div>
                             <div class="card-body pt-2">
@@ -603,27 +597,30 @@
         let data = [];
         let headers = [];
 
-        // Get table headers
+        
         table.querySelectorAll("tr").forEach((row, index) => {
             let rowData = [];
-            row.querySelectorAll("th, td").forEach(cell => {
-                rowData.push(cell.innerText);
+            let cells = row.querySelectorAll("th, td");
+
+          
+            cells.forEach((cell, cellIndex) => {
+            if (cellIndex < cells.length - 1) { 
+            rowData.push(cell.innerText);
+            }
             });
 
             if (index === 0) {
-                headers = rowData; // First row as headers
+                headers = rowData; 
             } else {
-                data.push(rowData); // Remaining rows as data
+                data.push(rowData); 
             }
         });
 
-        // Add table to PDF
         doc.autoTable({
             head: [headers],
             body: data
         });
 
-        // Save the PDF
         doc.save("Report.pdf");
     });
 </script>
