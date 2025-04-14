@@ -83,11 +83,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="signupEmail" class="form-label required">Email</label>
-                        <input type="email" class="form-control" id="signupEmail" name="email"required placeholder="Enter your email">
+                        <input type="email" class="form-control" id="signupEmail" name="email" placeholder="Enter your email">
                     </div>
                     <div class="mb-3">
                         <label for="signupPassword" class="form-label required">Password</label>
-                        <input type="password" class="form-control" name="Password" id="signupPassword" required placeholder="Create a password">
+                        <input type="password" class="form-control" name="Password" id="signupPassword"  placeholder="Create a password">
                     </div>
                     <div class="mb-3">
                         <label for="role" class="form-label">Sign up as:</label>
@@ -168,6 +168,25 @@
     document.getElementById("loginForm").addEventListener("submit" ,function(event){
         const emailInput=document.getElementById("email").value.trim();
         const password=document.getElementById("Password").value.trim();
+        const emailPattern=/^[a-zA-Z0-9._-]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/;
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&])[A-Za-z\d@$!%*?#&]{8,}$/;
+
+        if(!emailPattern.test(emailInput)){
+            alert("Please Enter Valid Email");
+            event.preventDefault();
+            return;
+        }
+
+        if (!passwordPattern.test(password)) {
+            alert("Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.");
+            event.preventDefault();
+            return;
+        }
+    });
+
+    document.getElementById("signupForm").addEventListener("submit" ,function(event){
+        const emailInput=document.getElementById("signupEmail").value.trim();
+        const password=document.getElementById("signupPassword").value.trim();
         const emailPattern=/^[a-zA-Z0-9._-]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/;
         const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&])[A-Za-z\d@$!%*?#&]{8,}$/;
 
